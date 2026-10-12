@@ -8,6 +8,7 @@ from bots.lyrics import get_lyrics, find_lyrics
 from bots.replyphoto import reply_photo
 from bots.text2image import draw_text
 from bots.coin import get_coin_info
+from bots.gift_codes import get_gift_codes
 
 from iris.decorators import *
 from helper.BanControl import ban_user, unban_user
@@ -67,6 +68,9 @@ def on_message(chat: ChatContext):
             
             case "!코인" | "!내코인" | "!바낸" | "!김프" | "!달러" | "!코인등록" | "!코인삭제":
                 get_coin_info(chat)
+
+            case "!기프트코드":
+                get_gift_codes(chat)
             
     except Exception as e :
         print(e)
